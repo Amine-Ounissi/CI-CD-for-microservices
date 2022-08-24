@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProfile name="!legacy-logging">
+        <springProfile name="!json-logging">
+            <include resource="logback/logback-spring-boot-base.xml" />
+        </springProfile>
+    </springProfile>
+    <springProfile name="legacy-logging">
+        <include resource="logback/logback-legacy.xml" />
+    </springProfile>
+    <springProfile name="json-logging">
+        <include resource="logback/logback-json.xml" />
+    </springProfile>
+</configuration>

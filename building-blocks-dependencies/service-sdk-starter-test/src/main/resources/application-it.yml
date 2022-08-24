@@ -1,0 +1,12 @@
+# Common configuration for integration tests.
+
+# Use a test internal JWT key:
+sso.jwt.internal.signature.key:
+  type: VALUE
+  value: JWTSecretKeyDontUseInProduction!
+
+# Use an in-memory localhost activemq broker for JMS-based integration tests
+spring.activemq:
+    broker-url: vm://localhost
+    in-memory: true
+    pooled: false

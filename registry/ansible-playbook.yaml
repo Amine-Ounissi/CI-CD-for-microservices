@@ -1,0 +1,179 @@
+---
+- name: Install Java and net-tools
+  hosts: localhost
+  tasks:
+    - name: Update APT package manager repositories cache
+      become: true
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600    
+ 
+    - name: Install Java using Ansible
+      become: yes
+      apt: name=openjdk-8-jre-headless
+ 
+    - name: Install net-tools
+      apt: name=net-tools
+
+- name: Install Maven
+  hosts: localhost
+  tasks:
+    - name: Install Maven using Ansible
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+         - maven
+
+- name: Install Jenkins
+  hosts: localhost
+  tasks:
+    - name: ensure the jenkins apt repository key is installed
+      apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
+      become: yes
+
+    - name: ensure the repository is configured
+      apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
+      become: yes
+
+    - name: ensure jenkins is installed
+      apt: name=jenkins update_cache=yes
+      become: yes
+
+    - name: ensure jenkins is running
+      service: name=jenkins state=started
+
+- name: Verify jenkins running
+  hosts: localhost
+  become: True
+  tasks:
+    - name: Check with ps
+      shell: ps aux | grep jenkins
+      register: ap_status
+    - debug: msg={{ap_status.stdout_lines}}
+    - name: Wait one minute
+      pause:
+        minutes: 1
+    - name: Check jenkins service
+      shell: |
+        sudo systemctl enable jenkins
+        sudo systemctl restart jenkins
+        sudo systemctl status jenkins
+
+      register: ap_status
+    - debug: msg={{ap_status.stdout_lines}}
+
+- name: Download and unpack Nexus installer  
+  hosts: localhost
+  become: True
+  tasks:
+    - name: Check nexus folder stats
+      stat:
+        path: /opt/nexus
+      register: stat_result
+
+    - name: Download Nexus
+      get_url:
+        url: https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+        dest: /opt/
+      register: download_result
+    - debug: msg={{download_result}}
+    - name: Untar nexus installer
+      unarchive:
+        src: "{{download_result.dest}}"
+        dest: /opt/
+        remote_src: yes
+      when: not stat_result.stat.exists     
+    - name: Find nexus folder
+      find:
+        paths: /opt
+        pattern: "nexus-*"
+        file_type: directory
+      register: find_result
+    - name: Rename nexus folder
+      shell: mv {{find_result.files[0].path}} /opt/nexus
+      when: not stat_result.stat.exists
+
+- name: Create nexus user to own nexus folders
+  hosts: localhost
+  become: True
+  tasks:
+    - name: Ensure group nexus exists
+      group:
+        name: nexus
+        state: present
+    - name: Create nexus user
+      user:
+        name: nexus
+        group: nexus
+    - name: Make nexus user owner of nexus folder
+      file:
+        path: /opt/nexus
+        state: directory
+        owner: nexus
+        group: nexus
+        recurse: yes 
+    - name: Make nexus user owner of sonatype folder
+      file:
+        path: /opt/sonatype-work
+        state: directory
+        owner: nexus
+        group: nexus
+        recurse: yes
+
+- name: Start nexus with nexus user
+  hosts: localhost
+  become: True
+  become_user: nexus
+  tasks:
+    - name: Set run_as_user nexus
+      lineinfile: 
+        path: /opt/nexus/bin/nexus.rc
+        regexp: '^#run_as_user=""'
+        line: run_as_user="nexus"
+    - name: Start nexus
+      command: /opt/nexus/bin/nexus start
+
+- name: Verify nexus running
+  hosts: localhost
+  become: True
+  tasks:
+    - name: Check with ps 
+      shell: ps aux | grep nexus
+      register: app_status
+    - debug: msg={{app_status.stdout_lines}}
+    - name: Wait one minute
+      pause:
+        minutes: 1
+    - name: Check with netstat
+      shell: netstat -plnt
+      register: app_status
+    - debug: msg={{app_status.stdout_lines}}
+    - name: Configure Nexus to run as a service
+      copy:
+        dest: "/etc/systemd/system/nexus.service"
+        content: |
+          [Unit]
+          Description=nexus service
+          After=network.target
+
+          [Service]
+          Type=forking
+          LimitNOFILE=65536  
+          User=nexus
+          Group=nexus
+          ExecStart=/opt/nexus/bin/nexus start
+          ExecStop=/opt/nexus/bin/nexus stop
+          User=nexus
+          Restart=on-abort
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Check nexus service
+      shell: |
+        sudo systemctl daemon-reload
+        sudo systemctl enable nexus
+        sudo systemctl restart nexus
+        sudo systemctl status nexus
+      register: appp_status
+    - debug: msg={{appp_status.stdout_lines}}

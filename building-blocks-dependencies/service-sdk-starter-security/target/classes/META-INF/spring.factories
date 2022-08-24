@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.buildingblocks.backend.security.auth.config.InternalJwtConsumerAutoConfiguration,\
+com.value.buildingblocks.security.HttpSecurityConfiguration,\
+com.value.buildingblocks.security.FilterRegistrationBeanConfiguration,\
+com.value.buildingblocks.access.ScopedAccessConfiguration
+org.springframework.boot.autoconfigure.AutoConfigurationImportFilter=\
+com.value.buildingblocks.security.CsrfImportFilter

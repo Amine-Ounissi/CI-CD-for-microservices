@@ -1,0 +1,4 @@
+/home/azureuser/building-blocks-dependencies/resilience/src/main/java/com/value/buildingblocks/resilience/ResilienceAutoConfiguration.java
+/home/azureuser/building-blocks-dependencies/resilience/src/main/java/com/value/buildingblocks/resilience/CallableWrapperSupplier.java
+/home/azureuser/building-blocks-dependencies/resilience/src/main/java/com/value/buildingblocks/resilience/CallableWrapperHystrixConcurrencyStrategy.java
+/home/azureuser/building-blocks-dependencies/resilience/src/main/java/com/value/buildingblocks/resilience/CallableWrapper.java

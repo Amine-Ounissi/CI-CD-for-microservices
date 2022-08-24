@@ -1,0 +1,6 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.buildingblocks.multitenancy.MultiTenancyAutoConfiguration,\
+com.value.buildingblocks.multitenancy.datasource.MultiTenancyDataSourceAutoConfiguration,\
+com.value.buildingblocks.multitenancy.datasource.hibernate.MultiTenancyHibernateAutoConfiguration,\
+com.value.buildingblocks.multitenancy.hystrix.CallableWrapperHystrixConcurrencyStrategyConfiguration,\
+com.value.buildingblocks.context.ContextScopeAutoConfiguration

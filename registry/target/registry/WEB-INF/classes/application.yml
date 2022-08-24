@@ -1,0 +1,42 @@
+server:
+  port : 8080
+
+# Registry application properties
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
+
+management:
+  endpoints:
+    jmx:
+      domain: ${spring.application.name}
+    web:
+      exposure:
+        include: prometheus, health, info, metrics
+      base-path: /actuator
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      group:
+        readiness:
+          include: '*'
+          show-details: when_authorized
+        liveness:
+          include: ping
+          show-details: never
+      show-details: when_authorized
+      roles:
+        - ADMIN
+        - ROLE_ADMIN
+        - ROLE_ACTUATOR
+
+spring:
+  freemarker:
+    prefer-file-system-access: false

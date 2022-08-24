@@ -1,0 +1,9 @@
+com/value/platform/edge/configuration/SecurityConfiguration.class
+com/value/platform/edge/configuration/GatewayActuatorProperties.class
+com/value/platform/edge/EdgeApplication.class
+com/value/platform/edge/configuration/GatewayActuatorProperties$Security.class
+com/value/platform/edge/csrf/WhitelistMatcher.class
+com/value/platform/edge/csrf/GatewayCsrfProperties.class
+org/springframework/cloud/kubernetes/loadbalancer/KubernetesServiceInstanceMapper.class
+com/value/platform/edge/csrf/RequestMatcher.class
+com/value/platform/edge/csrf/MobileRequestMatcher.class

@@ -1,0 +1,90 @@
+package com.value.dbs.user.manager.models.v2;
+
+import com.value.buildingblocks.persistence.model.AdditionalPropertiesAware;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({"totalElements", "users"})
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class GetUsersList implements AdditionalPropertiesAware {
+  @JsonProperty("totalElements")
+  @NotNull
+  private Long totalElements;
+  
+  @JsonProperty("users")
+  @Valid
+  @NotNull
+  private List<GetUser> users = new ArrayList<>();
+  
+  @JsonInclude(JsonInclude.Include.NON_EMPTY)
+  private Map<String, String> additions = new HashMap<>();
+  
+  @JsonProperty("totalElements")
+  public Long getTotalElements() {
+    return this.totalElements;
+  }
+  
+  @JsonProperty("totalElements")
+  public void setTotalElements(Long totalElements) {
+    this.totalElements = totalElements;
+  }
+  
+  public GetUsersList withTotalElements(Long totalElements) {
+    this.totalElements = totalElements;
+    return this;
+  }
+  
+  @JsonProperty("users")
+  public List<GetUser> getUsers() {
+    return this.users;
+  }
+  
+  @JsonProperty("users")
+  public void setUsers(List<GetUser> users) {
+    this.users = users;
+  }
+  
+  public GetUsersList withUsers(List<GetUser> users) {
+    this.users = users;
+    return this;
+  }
+  
+  public String toString() {
+    return ToStringBuilder.reflectionToString(this);
+  }
+  
+  public int hashCode() {
+    return (new HashCodeBuilder()).append(this.totalElements).append(this.users).toHashCode();
+  }
+  
+  public boolean equals(Object other) {
+    if (other == this)
+      return true; 
+    if (!(other instanceof GetUsersList))
+      return false; 
+    GetUsersList rhs = (GetUsersList)other;
+    return (new EqualsBuilder()).append(this.totalElements, rhs.totalElements).append(this.users, rhs.users).isEquals();
+  }
+  
+  @JsonProperty("additions")
+  public Map<String, String> getAdditions() {
+    return this.additions;
+  }
+  
+  @JsonProperty("additions")
+  public void setAdditions(Map<String, String> additions) {
+    this.additions = additions;
+  }
+}

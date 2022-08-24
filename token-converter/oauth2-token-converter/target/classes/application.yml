@@ -1,0 +1,94 @@
+server:
+  port : 8081
+
+## Registry
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    preferIpAddress: true
+    metadataMap:
+      public: true
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8080}/eureka/
+
+spring:
+  cache:
+    type: GENERIC
+  servlet:
+    multipart:
+      enabled: false
+
+value:
+  security:
+    internal-jwt-consumer:
+      enabled: false
+    http:
+      public-paths-configurer-enabled: false
+      authorized-configurer-enabled: false
+  token-converter:
+    cache:
+      enabled: true
+    claims-mapping:
+      - external: tid
+        internal: tid
+        required: false
+    authorizationRequestHeaderName: Authorization
+    authorizationResponseHeaderName: Authorization
+    authorizationCookieName: Authorization
+    jwt:
+      signatureMode: symmetric-key
+      signingKey: ${SIG_SECRET_KEY:JWTSecretKeyDontUseInProduction!}
+      #signatureMode: asymmetric-key-pair
+      #keyPair:
+        #location: file:///my-path/keystore.jks
+        #alias: my-key-name
+        #password: my-key-password
+
+  oauth2-token-converter:
+    userinfoSuffix: /protocol/openid-connect/userinfo
+    jwksSuffix: /protocol/openid-connect/certs
+    whitelistedDomains:
+      - issuerHost: ${IDENTITY_HOST:localhost}
+        internalHost: ${IDENTITY_INTERNAL_HOST:localhost:8082}
+    whitelistedAlgorithms:
+      - RS256
+    jwksVerification: false
+    jwksUsernameClaimName: user_name
+    userinfoVerification: true
+    userinfoUsernameClaimName: preferred_username
+    jwksCacheExpirySeconds: 60
+    userInfoConnectionTimeoutSeconds: 5
+    userInfoReadTimeoutSeconds: 5
+
+# jib image defaults
+management:
+  endpoints:
+    jmx:
+      domain: ${spring.application.name}
+    web:
+      exposure:
+        include: prometheus, health, info, metrics
+      base-path: /actuator
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      group:
+        readiness:
+          include: '*'
+          show-details: when_authorized
+        liveness:
+          include: ping
+          show-details: never
+      show-details: when_authorized
+      roles:
+        - ADMIN
+        - ROLE_ADMIN
+        - ROLE_ACTUATOR
+
+logging:
+  level:
+    root: INFO
+    con.value: DEBUG

@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: business
+  namespace: intern-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: business
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: business
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: business
+        image: 10.1.0.4:5000/repository/value/infra-amine-intern/business:latest.0.0.2-3
+        env:
+        - name: REGISTRY_HOST
+          value: "registry-cluster-ip"
+        - name: REGISTRY_PORT
+          value: "8080"
+        - name: SERVER_PORT
+          value: "8080"
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 0m
+            memory: 0Mi
+          limits:
+            cpu: 1000m
+            memory: 1024Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: business
+  namespace: intern-deploy
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: business
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: business-cluster-ip
+  namespace: intern-deploy
+spec:
+  selector:
+    app: business
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

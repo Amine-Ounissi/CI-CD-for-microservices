@@ -1,0 +1,5 @@
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-logging/src/main/java/com/value/buildingblocks/logging/LoggingProperties.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-logging/src/main/java/com/value/buildingblocks/logging/ValueLoggingEnvironmentProcessor.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-logging/src/main/java/com/value/buildingblocks/logging/ValueLoggingApplicationListener.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-logging/src/main/java/com/value/buildingblocks/logging/CrlfMessageConverter.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-logging/src/main/java/com/value/buildingblocks/logging/RequestLoggingAutoConfiguration.java

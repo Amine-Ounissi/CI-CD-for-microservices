@@ -1,0 +1,17 @@
+com/value/buildingblocks/configuration/filter/ExcludeFromComponentScanFilterContextCustomizer.class
+com/value/buildingblocks/common/OriginatingUserJwtHolder.class
+com/value/buildingblocks/configuration/filter/ExcludeFromComponentScanTypeExcludeFilter.class
+com/value/buildingblocks/presentation/errors/UnsupportedMediaTypeException.class
+com/value/buildingblocks/presentation/errors/ForbiddenException.class
+com/value/buildingblocks/presentation/errors/ApiErrorException.class
+com/value/buildingblocks/presentation/errors/InternalServerErrorException.class
+com/value/buildingblocks/configuration/filter/AbstractAutoConfigurationImportFilter.class
+com/value/buildingblocks/presentation/errors/UnauthorizedException.class
+com/value/buildingblocks/presentation/errors/NotFoundException.class
+com/value/buildingblocks/presentation/errors/Error.class
+com/value/buildingblocks/presentation/errors/NotAcceptableException.class
+com/value/buildingblocks/presentation/errors/BadRequestException.class
+com/value/buildingblocks/common/HttpCommunicationConstants.class
+com/value/buildingblocks/presentation/errors/ErrorAwareApiException.class
+com/value/buildingblocks/configuration/filter/ExcludeFromComponentScan.class
+com/value/buildingblocks/common/RequestAttributeKeys.class

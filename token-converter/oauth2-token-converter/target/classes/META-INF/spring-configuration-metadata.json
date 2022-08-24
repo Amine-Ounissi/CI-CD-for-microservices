@@ -1,0 +1,85 @@
+{
+  "groups": [
+    {
+      "name": "value.oauth2-token-converter",
+      "type": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.oauth2-token-converter.force-jwks-matching-claim-entries",
+      "type": "java.util.List<com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig$ForceJwksClaimEntry>",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    },
+    {
+      "name": "value.oauth2-token-converter.force-jwks-verification-given-matching-claims",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "value.oauth2-token-converter.jwks-cache-expiry-seconds",
+      "type": "java.lang.Long",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": 60
+    },
+    {
+      "name": "value.oauth2-token-converter.jwks-suffix",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    },
+    {
+      "name": "value.oauth2-token-converter.jwks-username-claim-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": "user_name"
+    },
+    {
+      "name": "value.oauth2-token-converter.jwks-verification",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "value.oauth2-token-converter.user-info-connection-timeout-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": 5
+    },
+    {
+      "name": "value.oauth2-token-converter.user-info-read-timeout-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": 5
+    },
+    {
+      "name": "value.oauth2-token-converter.userinfo-suffix",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    },
+    {
+      "name": "value.oauth2-token-converter.userinfo-username-claim-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": "preferred_username"
+    },
+    {
+      "name": "value.oauth2-token-converter.userinfo-verification",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "value.oauth2-token-converter.whitelisted-algorithms",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    },
+    {
+      "name": "value.oauth2-token-converter.whitelisted-domains",
+      "type": "java.util.List<com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig$DomainWhitelistEntry>",
+      "sourceType": "com.value.authentication.tokenconverter.config.Oauth2TokenConverterConfig"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "gateway",
+      "type": "com.value.platform.edge.filters.ValidateRoutesProperties",
+      "sourceType": "com.value.platform.edge.filters.ValidateRoutesProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gateway.ignored-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.ValidateRoutesProperties"
+    }
+  ],
+  "hints": []
+}

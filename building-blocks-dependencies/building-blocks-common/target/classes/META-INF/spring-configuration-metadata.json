@@ -1,0 +1,51 @@
+{
+  "groups": [
+    {
+      "name": "value",
+      "type": "com.value.buildingblocks.extensions.BehaviorExtensionConfiguration",
+      "sourceType": "com.value.buildingblocks.extensions.BehaviorExtensionConfiguration"
+    },
+    {
+      "name": "value.api",
+      "type": "com.value.buildingblocks.backend.api.MvcApiProperties",
+      "sourceType": "com.value.buildingblocks.backend.api.MvcApiProperties"
+    },
+    {
+      "name": "value.security.internal.authentication",
+      "type": "com.value.buildingblocks.backend.security.auth.config.ServiceApiAuthenticationProperties",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.ServiceApiAuthenticationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.api.offset-date-time-deserializer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.MvcApiProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.register-formatters",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.MvcApiProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.zoned-date-time-deserializer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.MvcApiProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.behavior-extensions",
+      "type": "java.util.Map<java.lang.String,com.value.buildingblocks.extensions.BehaviorExtensionConfiguration$BehaviorExtensionToggle>",
+      "sourceType": "com.value.buildingblocks.extensions.BehaviorExtensionConfiguration"
+    },
+    {
+      "name": "value.security.internal.authentication.required-scope",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.ServiceApiAuthenticationProperties",
+      "defaultValue": "api:service"
+    }
+  ],
+  "hints": []
+}

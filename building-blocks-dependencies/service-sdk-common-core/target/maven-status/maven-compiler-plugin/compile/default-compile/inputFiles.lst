@@ -1,0 +1,17 @@
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/configuration/filter/ExcludeFromComponentScanFilterContextCustomizer.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/ApiErrorException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/UnsupportedMediaTypeException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/UnauthorizedException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/configuration/filter/AbstractAutoConfigurationImportFilter.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/common/OriginatingUserJwtHolder.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/common/HttpCommunicationConstants.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/configuration/filter/ExcludeFromComponentScanTypeExcludeFilter.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/InternalServerErrorException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/BadRequestException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/NotAcceptableException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/Error.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/ErrorAwareApiException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/NotFoundException.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/common/RequestAttributeKeys.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/configuration/filter/ExcludeFromComponentScan.java
+/home/azureuser/building-blocks-dependencies/service-sdk-common-core/src/main/java/com/value/buildingblocks/presentation/errors/ForbiddenException.java

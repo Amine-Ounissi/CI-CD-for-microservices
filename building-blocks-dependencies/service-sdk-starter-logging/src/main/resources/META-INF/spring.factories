@@ -1,0 +1,8 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.value.buildingblocks.logging.ValueLoggingEnvironmentProcessor
+
+org.springframework.context.ApplicationListener=\
+com.value.buildingblocks.logging.ValueLoggingApplicationListener
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.buildingblocks.logging.RequestLoggingAutoConfiguration

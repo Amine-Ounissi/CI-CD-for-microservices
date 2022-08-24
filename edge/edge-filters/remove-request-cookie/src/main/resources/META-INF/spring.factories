@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.platform.edge.filters.RemoveRequestCookie,\
+  com.value.platform.edge.filters.RemoveRequestCookieProperties

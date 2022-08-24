@@ -1,0 +1,122 @@
+server:
+  port: 9090
+
+management:
+  endpoints:
+    jmx:
+      domain: ${spring.application.name}
+    web:
+      exposure:
+        include: prometheus, health, info, metrics, gateway
+      base-path: /actuator
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      group:
+        readiness:
+          include: '*'
+          show-details: when_authorized
+        liveness:
+          include: ping
+          show-details: never
+      show-details: when_authorized
+      roles:
+        - ADMIN
+        - ROLE_ADMIN
+        - ROLE_ACTUATOR
+
+## Registry
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${REGISTRY_HOST:localhost}:${REGISTRY_PORT:8080}/eureka/
+
+spring:
+  cloud:
+    gateway:
+      filter:
+        secure-headers:
+          disable: "content-security-policy"
+          strict-transport-security: max-age=31536000; includeSubDomains
+          frame-options: SAMEORIGIN
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+          predicates:
+            - name: Path
+              args:
+                pattern: "'/api/'+serviceId.toLowerCase()+'/**'"
+          filters:
+            - name: OrderedRewritePath
+              args:
+                regexp: "'/api/' + serviceId.toLowerCase() + '/(?<remaining>.*)'"
+                replacement: "{metadata.get('contextPath') != null ? metadata.get('contextPath') : ''} + '/${remaining}'"
+      routes:
+        - id: portal
+          uri: lb://portal
+          order: 10
+          predicates:
+            - Path=/**
+        - id: portal-api
+          uri: lb://portal
+          order: 5
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+      default-filters:
+        - ValidateRoutes
+        - TokenConversion
+        - RemoveRequestCookie
+        - RemoveResponseHeader=connection
+        - RemoveResponseHeader=content-length
+        - RemoveResponseHeader=content-encoding
+        - RemoveResponseHeader=server
+        - RemoveResponseHeader=transfer-encoding
+        - RemoveResponseHeader=x-powered-by
+        - RemoveResponseHeader=x-application-context
+        - RemoveResponseHeader=breadcrumbId
+        - SecureHeaders
+    kubernetes:
+      enabled: false
+      loadbalancer:
+        enabled: false
+      reload:
+        enabled: false
+  zipkin:
+    enabled: false
+  jmx:
+    default-domain: ${spring.application.name}
+
+gateway:
+  ignoredPatterns:
+    - /api/**/service-api/**
+
+  csrf:
+    ignoredPaths:
+      - /api/auth/login*/**
+      - /api/auth/logout*/**
+
+  actuator:
+    security:
+      enabled: true
+    user: admin
+    password: admin
+
+  token:
+    converter:
+      service-name: token-converter
+      ignore:
+        - /login
+        - /**/auth*/login
+        - /api/**/public-api/**
+      url: ${GATEWAY_TOKEN_CONVERTER_URL:http://token-converter/convert}
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.value: DEBUG

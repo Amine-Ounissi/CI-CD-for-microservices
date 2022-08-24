@@ -1,0 +1,102 @@
+{
+  "groups": [
+    {
+      "name": "gateway.token.converter",
+      "type": "com.value.platform.edge.filters.TokenConversionProperties",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.downstream-request-header",
+      "type": "com.value.platform.edge.filters.TokenConversionProperties$DownstreamRequestHeader",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "sourceMethod": "getDownstreamRequestHeader()"
+    },
+    {
+      "name": "gateway.token.converter.strict",
+      "type": "com.value.platform.edge.filters.TokenConversionProperties$Strict",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "sourceMethod": "getStrict()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gateway.token.converter.authorization-header",
+      "type": "java.lang.String",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "gateway.token.converter.copy-upstream-on-failure",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "gateway.token.converter.downstream-headers",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.downstream-request-header.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties$DownstreamRequestHeader",
+      "defaultValue": true
+    },
+    {
+      "name": "gateway.token.converter.downstream-request-header.name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties$DownstreamRequestHeader",
+      "defaultValue": "X-ORIGINAL-URI"
+    },
+    {
+      "name": "gateway.token.converter.headers",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.ignore",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.method",
+      "type": "org.springframework.http.HttpMethod",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.omit-headers",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.strict.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties$Strict",
+      "defaultValue": true
+    },
+    {
+      "name": "gateway.token.converter.strict.inaccessible-status",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties$Strict",
+      "defaultValue": 0
+    },
+    {
+      "name": "gateway.token.converter.upstream-header-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "defaultValue": "Upstream-"
+    },
+    {
+      "name": "gateway.token.converter.upstream-headers",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties"
+    },
+    {
+      "name": "gateway.token.converter.url",
+      "type": "java.lang.String",
+      "sourceType": "com.value.platform.edge.filters.TokenConversionProperties",
+      "defaultValue": "http:\/\/token-converter\/convert"
+    }
+  ],
+  "hints": []
+}

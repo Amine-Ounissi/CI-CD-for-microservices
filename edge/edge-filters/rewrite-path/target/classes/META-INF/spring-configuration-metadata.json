@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "gateway.filter.rewrite-path",
+      "type": "com.value.platform.edge.filters.OrderedRewritePathProperties",
+      "sourceType": "com.value.platform.edge.filters.OrderedRewritePathProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gateway.filter.rewrite-path.order",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.platform.edge.filters.OrderedRewritePathProperties",
+      "defaultValue": 100
+    }
+  ],
+  "hints": []
+}

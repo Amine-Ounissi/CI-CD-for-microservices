@@ -1,0 +1,13 @@
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/ApiErrorExceptionInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/NoopResponseErrorHandler.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/ConverterInterServiceCustomizer.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/InterceptorsEnabledHeaderInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/OauthErrorExceptionInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/CopyHeaderInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/InterServiceLoggingInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/ObjectMapperInterServiceCustomizer.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/LoggingInterServiceCustomizer.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/InternalRequestContextInterceptor.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/InterServiceRestTemplateCustomizer.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/HttpCommunicationProperties.java
+/home/azureuser/building-blocks-dependencies/communication/src/main/java/com/value/buildingblocks/backend/communication/http/HttpCommunicationConfiguration.java

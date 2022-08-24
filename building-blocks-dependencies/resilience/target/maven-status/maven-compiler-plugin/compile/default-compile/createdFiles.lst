@@ -1,0 +1,5 @@
+com/value/buildingblocks/resilience/CallableWrapper.class
+META-INF/spring-autoconfigure-metadata.properties
+com/value/buildingblocks/resilience/ResilienceAutoConfiguration.class
+com/value/buildingblocks/resilience/CallableWrapperHystrixConcurrencyStrategy.class
+com/value/buildingblocks/resilience/CallableWrapperSupplier.class

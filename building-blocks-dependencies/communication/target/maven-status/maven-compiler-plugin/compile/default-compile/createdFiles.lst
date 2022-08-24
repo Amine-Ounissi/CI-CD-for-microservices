@@ -1,0 +1,17 @@
+META-INF/spring-configuration-metadata.json
+com/value/buildingblocks/backend/communication/http/OauthErrorExceptionInterceptor.class
+com/value/buildingblocks/backend/communication/http/InternalRequestContextInterceptor.class
+com/value/buildingblocks/backend/communication/http/NoopResponseErrorHandler.class
+com/value/buildingblocks/backend/communication/http/LoggingInterServiceCustomizer.class
+com/value/buildingblocks/backend/communication/http/HttpCommunicationConfiguration.class
+com/value/buildingblocks/backend/communication/http/HttpCommunicationConfiguration$DisoverableClientCredentialsAccessTokenProvider.class
+com/value/buildingblocks/backend/communication/http/InterServiceLoggingInterceptor.class
+com/value/buildingblocks/backend/communication/http/InterceptorsEnabledHeaderInterceptor.class
+com/value/buildingblocks/backend/communication/http/CopyHeaderInterceptor.class
+META-INF/spring-autoconfigure-metadata.properties
+com/value/buildingblocks/backend/communication/http/HttpCommunicationProperties.class
+com/value/buildingblocks/backend/communication/http/ObjectMapperInterServiceCustomizer.class
+com/value/buildingblocks/backend/communication/http/InterServiceRestTemplateCustomizer.class
+com/value/buildingblocks/backend/communication/http/ApiErrorExceptionInterceptor.class
+com/value/buildingblocks/backend/communication/http/ConverterInterServiceCustomizer.class
+com/value/buildingblocks/backend/communication/http/HttpCommunicationProperties$InterServiceHttpClientProperties.class

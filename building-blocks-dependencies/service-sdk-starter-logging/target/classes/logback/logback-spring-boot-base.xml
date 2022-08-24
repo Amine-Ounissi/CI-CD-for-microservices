@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This is a slightly modified version of the file provided by spring-boot-[version].jar on the classpath at
+org/springframework/boot/logging/logback/base.xml
+
+Original source can be found at:
+https://github.com/spring-projects/spring-boot/blob/master/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base.xml
+
+This version changes the root logger level from "INFO" to "${logging.level:-WARN}" for consistency with the other
+packaged value logback configurations, and adds this comment block.
+
+All other content (including comments) remains the same and is used under the terms of the Apache License as defined
+here: https://github.com/spring-projects/spring-boot/blob/master/LICENSE.txt
+-->
+
+<!--
+Base logback configuration provided for compatibility with Spring Boot 1.1
+-->
+
+<included>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+	<root level="${logging.level:-WARN}">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+</included>

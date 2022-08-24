@@ -1,0 +1,6 @@
+com/value/buildingblocks/security/csrf/AutoCsrfWebSecurityConfiguration$CsrfWebSecurityConfigurerAdapter.class
+com/value/buildingblocks/security/csrf/CsrfRequestMatcher.class
+com/value/buildingblocks/security/csrf/CsrfWebSecurityConfigurer.class
+com/value/buildingblocks/security/csrf/AutoCsrfWebSecurityConfiguration.class
+com/value/buildingblocks/security/csrf/CsrfWebSecurityConfigurer$Beans.class
+com/value/buildingblocks/security/csrf/DisableAutoCsrfWebSecurityConfiguration.class

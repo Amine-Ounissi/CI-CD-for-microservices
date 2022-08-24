@@ -1,0 +1,5 @@
+com/value/buildingblocks/persistence/configuration/HibernateValidationConfiguration.class
+com/value/buildingblocks/persistence/context/OriginatorContextHolder.class
+com/value/buildingblocks/persistence/configuration/PersistenceConfiguration$Disabled.class
+com/value/buildingblocks/persistence/configuration/PersistenceConfiguration.class
+com/value/buildingblocks/persistence/configuration/PersistenceConfiguration$Enabled.class

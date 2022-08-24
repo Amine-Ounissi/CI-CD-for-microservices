@@ -1,0 +1,8 @@
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/csrf/MobileRequestMatcher.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/configuration/GatewayActuatorProperties.java
+/home/azureuser/edge/edge/src/main/java/org/springframework/cloud/kubernetes/loadbalancer/KubernetesServiceInstanceMapper.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/configuration/SecurityConfiguration.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/csrf/RequestMatcher.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/EdgeApplication.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/csrf/WhitelistMatcher.java
+/home/azureuser/edge/edge/src/main/java/com/value/platform/edge/csrf/GatewayCsrfProperties.java

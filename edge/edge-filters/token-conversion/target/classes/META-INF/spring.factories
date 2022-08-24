@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.platform.edge.filters.TokenConversion,\
+com.value.platform.edge.filters.TokenConversionProperties,\
+com.value.platform.edge.filters.WebClientConfiguration

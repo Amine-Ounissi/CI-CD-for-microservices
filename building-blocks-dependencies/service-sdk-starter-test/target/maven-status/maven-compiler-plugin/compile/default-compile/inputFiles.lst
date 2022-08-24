@@ -1,0 +1,3 @@
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-test/src/main/java/com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-test/src/main/java/com/value/buildingblocks/backend/communication/http/TestOAuthTokenCustomizerConfiguration.java
+/home/azureuser/building-blocks-dependencies/service-sdk-starter-test/src/main/java/com/value/buildingblocks/backend/communication/http/ServiceTokenInterServiceCustomizer.java

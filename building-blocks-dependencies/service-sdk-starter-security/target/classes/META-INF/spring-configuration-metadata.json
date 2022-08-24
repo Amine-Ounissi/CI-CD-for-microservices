@@ -1,0 +1,101 @@
+{
+  "groups": [
+    {
+      "name": "value.basic-authentication",
+      "type": "com.value.buildingblocks.backend.security.auth.config.BasicAuthenticationConfigurationProperties",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.BasicAuthenticationConfigurationProperties"
+    },
+    {
+      "name": "value.security",
+      "type": "com.value.buildingblocks.access.ScopedAccessProperties",
+      "sourceType": "com.value.buildingblocks.access.ScopedAccessProperties"
+    },
+    {
+      "name": "value.security.http",
+      "type": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties"
+    },
+    {
+      "name": "value.security.public",
+      "type": "com.value.buildingblocks.backend.security.auth.config.PublicPathConfigurationProperties",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.PublicPathConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.basic-authentication.password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.BasicAuthenticationConfigurationProperties"
+    },
+    {
+      "name": "value.basic-authentication.username",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.BasicAuthenticationConfigurationProperties"
+    },
+    {
+      "name": "value.security.http.actuator-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.adapter-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.authorized-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.error-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.originating-user-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.public-paths-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.http.stateless-configurer-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.security.HttpSecurityProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.public.paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.PublicPathConfigurationProperties"
+    },
+    {
+      "name": "value.security.rules",
+      "type": "java.util.LinkedHashMap<java.lang.String,com.value.buildingblocks.access.ScopedAccessProperties$AccessRule>",
+      "sourceType": "com.value.buildingblocks.access.ScopedAccessProperties"
+    },
+    {
+      "name": "value.security.rules-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.access.ScopedAccessProperties",
+      "defaultValue": false
+    }
+  ],
+  "hints": []
+}

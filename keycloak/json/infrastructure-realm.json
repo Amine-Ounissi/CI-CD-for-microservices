@@ -1,0 +1,97 @@
+{
+  "id": "infrastructure",
+  "realm": "infrastructure",
+  "displayName": "Infrastructure",
+  "displayNameHtml": "<div class=\"kc-logo-text\"><span>Infrastructure</span></div>",
+  "notBefore": 0,
+  "revokeRefreshToken": false,
+  "refreshTokenMaxReuse": 0,
+  "accessTokenLifespan": 1800,
+  "accessTokenLifespanForImplicitFlow": 900,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 36000,
+  "ssoSessionIdleTimeoutRememberMe": 0,
+  "ssoSessionMaxLifespanRememberMe": 0,
+  "offlineSessionIdleTimeout": 2592000,
+  "offlineSessionMaxLifespanEnabled": false,
+  "offlineSessionMaxLifespan": 5184000,
+  "accessCodeLifespan": 1800,
+  "accessCodeLifespanUserAction": 300,
+  "accessCodeLifespanLogin": 1800,
+  "actionTokenGeneratedByAdminLifespan": 43200,
+  "actionTokenGeneratedByUserLifespan": 300,
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "registrationEmailAsUsername": false,
+  "rememberMe": false,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": false,
+  "permanentLockout": true,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "waitIncrementSeconds": 20,
+  "quickLoginCheckMilliSeconds": 1000,
+  "maxDeltaTimeSeconds": 43200,
+  "failureFactor": 3,
+  "users" : [
+    {
+      "username" : "user",
+      "enabled": true,
+      "email" : "sample-user@example",
+      "firstName": "Sample",
+      "lastName": "User",
+      "credentials" : [
+        { "type" : "password",
+          "value" : "password" }
+      ],
+      "realmRoles": [ "user" ],
+      "clientRoles": {
+        "account": ["view-profile", "manage-account"]
+      }
+    }
+  ],
+  "roles" : {
+    "realm" : [
+      {
+        "name": "user",
+        "description": "User privileges"
+      },
+      {
+        "name": "admin",
+        "description": "Administrator privileges"
+      }
+    ]
+  },
+  "scopeMappings": [
+    {
+      "client": "default-client",
+      "roles": ["user"]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "default-client",
+      "enabled": true,
+      "publicClient": true,
+      "baseUrl": "/default-client",
+      "redirectUris": [
+        "/default-client/*"
+      ],
+      "webOrigins": []
+    }
+  ],
+  "clientScopeMappings": {
+    "account": [
+      {
+        "client": "default-client",
+        "roles": ["view-profile"]
+      }
+    ]
+  }
+
+}

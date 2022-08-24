@@ -1,0 +1,16 @@
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/CustomSecurityExpressionRoot.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/PeerServiceExpressionHandler.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/SecurityContextUtilConfiguration.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/DefaultPeerServiceExpressionHandler.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/MtlsHttpSecurityConfigurer.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/ServiceApiHttpSecurityConfigurer.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/CustomPermissionEvaluatorSecurityConfig.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/SecurityContextUtil.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/MutualTlsConfigurationProperties.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/AlwaysFalsePeerServiceExpressionHandler.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/FunctionalAccessControl.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/ServiceApiConfigurationProperties.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/MutualTlsUserDetailsService.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/CustomSecurityExpressionHandler.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/AuthSecurityAutoConfiguration.java
+/home/azureuser/building-blocks-dependencies/auth-security/src/main/java/com/value/buildingblocks/backend/security/auth/config/FunctionalAccessControlDefault.java

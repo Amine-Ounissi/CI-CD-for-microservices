@@ -1,0 +1,237 @@
+{
+  "groups": [
+    {
+      "name": "value.context",
+      "type": "com.value.buildingblocks.context.ContextProperties",
+      "sourceType": "com.value.buildingblocks.context.ContextProperties"
+    },
+    {
+      "name": "value.multi-tenancy",
+      "type": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties"
+    },
+    {
+      "name": "value.multi-tenancy.caching",
+      "type": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$CachingProperties",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "sourceMethod": "getCaching()"
+    },
+    {
+      "name": "value.multi-tenancy.datasource",
+      "type": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "sourceMethod": "getDatasource()"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults",
+      "type": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties",
+      "sourceMethod": "getDefaults()"
+    },
+    {
+      "name": "value.multi-tenancy.tenant-filter",
+      "type": "com.value.buildingblocks.multitenancy.TenantFilter",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyAutoConfiguration",
+      "sourceMethod": "tenantFilter(com.value.buildingblocks.multitenancy.TenantProvider,java.util.List<com.value.buildingblocks.multitenancy.TenantIdentifierStrategy>)"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.context.error-on-invalid-property-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.context.ContextProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.multi-tenancy.caching.tenant-agnostic-cache-resolvers",
+      "type": "java.util.Map<java.lang.String,java.lang.Boolean>",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$CachingProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.default-catalog",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.default-schema",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.default-tenant-id",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.continue-on-error",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.data",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.data-password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.data-username",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.dbcp2",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.driver-class-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.generate-unique-name",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.hikari",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.initialization-mode",
+      "type": "org.springframework.boot.jdbc.DataSourceInitializationMode",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.jndi-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.platform",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.schema",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.schema-password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.schema-username",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.separator",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.sql-script-encoding",
+      "type": "java.nio.charset.Charset",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.tomcat",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.type",
+      "type": "java.lang.Class<? extends javax.sql.DataSource>",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.url",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.username",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.defaults.xa",
+      "type": "org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Xa",
+      "sourceType": "com.value.buildingblocks.multitenancy.datasource.ExtendedDataSourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.datasource.strategy",
+      "type": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties$Strategy",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties$DatasourceProperties"
+    },
+    {
+      "name": "value.multi-tenancy.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.multi-tenancy.header-paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties"
+    },
+    {
+      "name": "value.multi-tenancy.http-header-strategy-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.multi-tenancy.jwt-claim-strategy-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.multi-tenancy.service-request-strategy-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.multi-tenancy.tenant-filter.environment",
+      "type": "org.springframework.core.env.Environment",
+      "sourceType": "com.value.buildingblocks.multitenancy.TenantFilter"
+    },
+    {
+      "name": "value.multi-tenancy.tenant-filter.should-not-filter-paths",
+      "type": "java.util.List<org.springframework.security.web.util.matcher.AntPathRequestMatcher>",
+      "sourceType": "com.value.buildingblocks.multitenancy.TenantFilter"
+    },
+    {
+      "name": "value.multi-tenancy.tenant-id-http-header",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties",
+      "defaultValue": "X-TID"
+    },
+    {
+      "name": "value.multi-tenancy.tenants",
+      "type": "java.util.List<com.value.buildingblocks.multitenancy.Tenant>",
+      "sourceType": "com.value.buildingblocks.multitenancy.MultiTenancyConfigurationProperties"
+    }
+  ],
+  "hints": []
+}

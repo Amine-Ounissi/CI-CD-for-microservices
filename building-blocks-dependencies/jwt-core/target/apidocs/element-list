@@ -1,0 +1,12 @@
+com.value.buildingblocks.jwt.core
+com.value.buildingblocks.jwt.core.authenticaton
+com.value.buildingblocks.jwt.core.blacklist
+com.value.buildingblocks.jwt.core.blacklist.config
+com.value.buildingblocks.jwt.core.blacklist.dto
+com.value.buildingblocks.jwt.core.blacklist.impl
+com.value.buildingblocks.jwt.core.blacklist.util
+com.value.buildingblocks.jwt.core.exception
+com.value.buildingblocks.jwt.core.properties
+com.value.buildingblocks.jwt.core.token
+com.value.buildingblocks.jwt.core.type
+com.value.buildingblocks.jwt.core.util

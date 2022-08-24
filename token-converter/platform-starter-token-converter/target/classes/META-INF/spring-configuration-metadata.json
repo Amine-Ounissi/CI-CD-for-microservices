@@ -1,0 +1,250 @@
+{
+  "groups": [
+    {
+      "name": "value.communication.services.service.api",
+      "type": "com.value.authentication.tokenconverter.service.api.listener.client.v2.users.ServiceApiUsersClientHttpImplAutoConfiguration",
+      "sourceType": "com.value.authentication.tokenconverter.service.api.listener.client.v2.users.ServiceApiUsersClientHttpImplAutoConfiguration"
+    },
+    {
+      "name": "value.token-converter",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties"
+    },
+    {
+      "name": "value.token-converter.cache",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Cache",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "sourceMethod": "getCache()"
+    },
+    {
+      "name": "value.token-converter.claim-value-validation",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$ClaimValueValidation",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "sourceMethod": "getClaimValueValidation()"
+    },
+    {
+      "name": "value.token-converter.dbs",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Dbs",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "sourceMethod": "getDbs()"
+    },
+    {
+      "name": "value.token-converter.jwt",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "sourceMethod": "getJwt()"
+    },
+    {
+      "name": "value.token-converter.jwt.key-pair",
+      "type": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt$KeyPair",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt",
+      "sourceMethod": "getKeyPair()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.communication.services.service.api.base-uri",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.service.api.listener.client.v2.users.ServiceApiUsersClientHttpImplAutoConfiguration",
+      "defaultValue": "\/internal\/v2"
+    },
+    {
+      "name": "value.communication.services.service.api.scheme",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.service.api.listener.client.v2.users.ServiceApiUsersClientHttpImplAutoConfiguration"
+    },
+    {
+      "name": "value.communication.services.service.api.service-id",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.service.api.listener.client.v2.users.ServiceApiUsersClientHttpImplAutoConfiguration",
+      "defaultValue": "user-manager"
+    },
+    {
+      "name": "value.token-converter.actuator-client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "vds-actuator"
+    },
+    {
+      "name": "value.token-converter.actuator-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "vds-actuator"
+    },
+    {
+      "name": "value.token-converter.authorization-cookie-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "value.token-converter.authorization-request-header-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "value.token-converter.authorization-response-header-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "Authorization"
+    },
+    {
+      "name": "value.token-converter.cache.cache-specs",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Cache"
+    },
+    {
+      "name": "value.token-converter.cache.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Cache",
+      "defaultValue": false
+    },
+    {
+      "name": "value.token-converter.cache.maximum-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Cache",
+      "defaultValue": 1000
+    },
+    {
+      "name": "value.token-converter.cache.ttl",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Cache",
+      "defaultValue": "3s"
+    },
+    {
+      "name": "value.token-converter.claim-value-validation.claim-deny-entries",
+      "type": "java.util.List<com.value.authentication.tokenconverter.configuration.TokenConverterProperties$ClaimValueValidation$ClaimDenyEntry>",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$ClaimValueValidation"
+    },
+    {
+      "name": "value.token-converter.claim-value-validation.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$ClaimValueValidation",
+      "defaultValue": false
+    },
+    {
+      "name": "value.token-converter.claims-mapping",
+      "type": "java.util.List<com.value.authentication.tokenconverter.configuration.TokenConverterProperties$ClaimMapping>",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties"
+    },
+    {
+      "name": "value.token-converter.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "vds-client"
+    },
+    {
+      "name": "value.token-converter.dbs.cache-specs",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Dbs"
+    },
+    {
+      "name": "value.token-converter.dbs.maximum-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Dbs",
+      "defaultValue": 10000
+    },
+    {
+      "name": "value.token-converter.dbs.propagation-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Dbs",
+      "defaultValue": false
+    },
+    {
+      "name": "value.token-converter.dbs.ttl",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Dbs",
+      "defaultValue": "1h"
+    },
+    {
+      "name": "value.token-converter.downstream-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": ""
+    },
+    {
+      "name": "value.token-converter.enable-cookie-filter",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.token-converter.jwt.key-pair.alias",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt$KeyPair"
+    },
+    {
+      "name": "value.token-converter.jwt.key-pair.alias-password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt$KeyPair"
+    },
+    {
+      "name": "value.token-converter.jwt.key-pair.location",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt$KeyPair"
+    },
+    {
+      "name": "value.token-converter.jwt.key-pair.password",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt$KeyPair"
+    },
+    {
+      "name": "value.token-converter.jwt.signature-algorithm",
+      "type": "com.value.authentication.tokenconverter.crypto.JsonWebAlgorithm",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt"
+    },
+    {
+      "name": "value.token-converter.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": "vds-secret"
+    },
+    {
+      "name": "value.token-converter.token-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": 300
+    },
+    {
+      "name": "value.token-converter.upstream-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": ""
+    },
+    {
+      "name": "value.token-converter.verify-only-entries",
+      "type": "java.util.List<com.value.authentication.tokenconverter.configuration.TokenConverterProperties$VerifyOnlyEntry>",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties"
+    },
+    {
+      "name": "value.token-converter.verify-only-no-internal-token",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.token-converter.jwt.signature-mode",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "value.token-converter.jwt.signing-key",
+      "type": "java.lang.String",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt",
+      "deprecated": true,
+      "deprecation": {}
+    },
+    {
+      "name": "value.token-converter.jwt.signing-key-base64-encoded",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.authentication.tokenconverter.configuration.TokenConverterProperties$Jwt",
+      "defaultValue": false,
+      "deprecated": true,
+      "deprecation": {}
+    }
+  ],
+  "hints": []
+}

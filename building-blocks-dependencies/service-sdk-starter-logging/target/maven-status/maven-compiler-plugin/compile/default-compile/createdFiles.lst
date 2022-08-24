@@ -1,0 +1,8 @@
+META-INF/spring-configuration-metadata.json
+com/value/buildingblocks/logging/RequestLoggingAutoConfiguration.class
+com/value/buildingblocks/logging/LoggingProperties$CrlfProtectionProperties.class
+com/value/buildingblocks/logging/CrlfMessageConverter.class
+com/value/buildingblocks/logging/ValueLoggingEnvironmentProcessor.class
+META-INF/spring-autoconfigure-metadata.properties
+com/value/buildingblocks/logging/LoggingProperties.class
+com/value/buildingblocks/logging/ValueLoggingApplicationListener.class

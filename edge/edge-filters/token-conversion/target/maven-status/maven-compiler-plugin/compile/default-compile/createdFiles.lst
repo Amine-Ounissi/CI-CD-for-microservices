@@ -1,0 +1,6 @@
+META-INF/spring-configuration-metadata.json
+com/value/platform/edge/filters/WebClientConfiguration.class
+com/value/platform/edge/filters/TokenConversionProperties.class
+com/value/platform/edge/filters/TokenConversion.class
+com/value/platform/edge/filters/TokenConversionProperties$DownstreamRequestHeader.class
+com/value/platform/edge/filters/TokenConversionProperties$Strict.class

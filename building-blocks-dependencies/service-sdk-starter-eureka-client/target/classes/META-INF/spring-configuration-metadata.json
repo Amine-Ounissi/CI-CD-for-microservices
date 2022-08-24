@@ -1,0 +1,35 @@
+{
+  "groups": [
+    {
+      "name": "value.loadbalancer",
+      "type": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties",
+      "sourceType": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.loadbalancer.max-retries",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "value.loadbalancer.max-servers",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties",
+      "defaultValue": 1
+    },
+    {
+      "name": "value.loadbalancer.retry-all-operations",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.loadbalancer.retry-status-codes",
+      "type": "java.util.List<java.lang.Integer>",
+      "sourceType": "com.value.buildingblocks.retry.SimpleLoadBalancedRetryProperties"
+    }
+  ],
+  "hints": []
+}

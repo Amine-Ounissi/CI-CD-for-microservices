@@ -1,0 +1,200 @@
+{
+  "groups": [
+    {
+      "name": "value.communication.http",
+      "type": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties"
+    },
+    {
+      "name": "value.communication.http.client",
+      "type": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "sourceMethod": "getClient()"
+    },
+    {
+      "name": "value.communication.http.inter-service-logging",
+      "type": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationConfiguration",
+      "sourceMethod": "interServiceLoggingInterceptor()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.communication.http.access-token-uri",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": "http:\/\/token-converter\/oauth\/token"
+    },
+    {
+      "name": "value.communication.http.autowire-object-mapper",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client-authentication-scheme",
+      "type": "org.springframework.security.oauth2.common.AuthenticationScheme",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties"
+    },
+    {
+      "name": "value.communication.http.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": "vds-client"
+    },
+    {
+      "name": "value.communication.http.client-scope",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties"
+    },
+    {
+      "name": "value.communication.http.client.automatic-retries-disabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.blacklisted-headers",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties"
+    },
+    {
+      "name": "value.communication.http.client.conn-time-to-live",
+      "type": "java.lang.Long",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": -1
+    },
+    {
+      "name": "value.communication.http.client.content-compression-disabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.default-user-agent-disabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.evict-expired-connections",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.evict-idle-connections",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.max-conn-per-route",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "value.communication.http.client.max-conn-total",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "value.communication.http.client.max-idle-time",
+      "type": "java.lang.Long",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "value.communication.http.client.propagate-headers",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.client.redirect-handling-disabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.communication.http.client.use-system-properties",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.client.user-agent",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties$InterServiceHttpClientProperties"
+    },
+    {
+      "name": "value.communication.http.default-scheme",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": "http"
+    },
+    {
+      "name": "value.communication.http.discoverable-access-token-service",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.excluded-keyword",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": "omitted"
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.include-headers",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.include-payload",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.include-request-uri",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.include-response-status",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": true
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.max-payload-length",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": -1
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.request-format",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": "request: {} headers=[{}] payload=[{}]"
+    },
+    {
+      "name": "value.communication.http.inter-service-logging.response-format",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.InterServiceLoggingInterceptor",
+      "defaultValue": "response: {} headers=[{}] payload=[{}]"
+    },
+    {
+      "name": "value.communication.http.verify-certificate-hostnames",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.communication.http.HttpCommunicationProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}

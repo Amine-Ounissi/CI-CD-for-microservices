@@ -1,0 +1,111 @@
+{
+  "groups": [
+    {
+      "name": "buildingblocks.security.xss",
+      "type": "com.value.buildingblocks.xss.XssFilterAutoConfiguration",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration"
+    },
+    {
+      "name": "value.api.extensions",
+      "type": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig"
+    },
+    {
+      "name": "value.idempotency.double-submission-filter",
+      "type": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "buildingblocks.security.xss.autoconfig",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration",
+      "defaultValue": true
+    },
+    {
+      "name": "buildingblocks.security.xss.custom-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration"
+    },
+    {
+      "name": "buildingblocks.security.xss.disabled-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration"
+    },
+    {
+      "name": "buildingblocks.security.xss.esapi",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration",
+      "defaultValue": true
+    },
+    {
+      "name": "buildingblocks.security.xss.exclude-paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.xss.XssFilterAutoConfiguration"
+    },
+    {
+      "name": "value.api.extensions.classes",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig"
+    },
+    {
+      "name": "value.api.extensions.max-key-length",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig",
+      "defaultValue": 50
+    },
+    {
+      "name": "value.api.extensions.max-properties",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig",
+      "defaultValue": 100
+    },
+    {
+      "name": "value.api.extensions.max-value-length",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig",
+      "defaultValue": 500
+    },
+    {
+      "name": "value.api.extensions.persist-empty-string-values",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "value.api.extensions.property-sets",
+      "type": "java.util.Map<java.lang.String,com.value.buildingblocks.backend.validation.config.PropertySet>",
+      "sourceType": "com.value.buildingblocks.backend.validation.config.ApiExtensionConfig"
+    },
+    {
+      "name": "value.idempotency.double-submission-filter.cache-name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig",
+      "defaultValue": "unknown-double-submission"
+    },
+    {
+      "name": "value.idempotency.double-submission-filter.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig",
+      "defaultValue": false
+    },
+    {
+      "name": "value.idempotency.double-submission-filter.filtered-http-request-methods",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig"
+    },
+    {
+      "name": "value.idempotency.double-submission-filter.filtered-paths",
+      "type": "java.lang.String[]",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig"
+    },
+    {
+      "name": "value.idempotency.double-submission-filter.time-to-live",
+      "type": "java.lang.Integer",
+      "sourceType": "com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig",
+      "defaultValue": 30
+    }
+  ],
+  "hints": []
+}

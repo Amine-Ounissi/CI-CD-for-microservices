@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.12.RELEASE</version>
+    </parent>
+
+    <groupId>com.value.buildingblocks</groupId>
+    <artifactId>service-sdk-starter-core</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <description>Starter with minimal set of dependencies which can be used via Maven dependency
+        import.
+        Net effect is a application that includes this start can be fired up as a web application,
+        discoverable, logs to
+        the value standards, supports an authenticated health endpoint (Actuator), calls are traced,
+        can
+        be fired up
+        in a testable/mocked manner.
+    </description>
+
+    <organization>
+        <name>Value Digital Services</name>
+        <url>https://www.value.com.tn</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+
+        <skip.integration.tests>false</skip.integration.tests>
+        <skip.unit.tests>false</skip.unit.tests>
+        <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
+        <coverage.reports.dir>${project.build.directory}/coverage-reports</coverage.reports.dir>
+        <sonar.jacoco.reportPaths>
+            ${coverage.reports.dir}/jacoco.exec,${coverage.reports.dir}/jacoco-it.exec
+        </sonar.jacoco.reportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml,${project.reporting.outputDirectory}/jacoco-it/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.sources>${project.basedir}/src/main/</sonar.sources>
+        <sonar.tests>${project.basedir}/src/test/</sonar.tests>
+        <run.addResources>false</run.addResources>
+
+        <!-- ## docker configuration -->
+        <docker.repo.url>harbor.value.eu</docker.repo.url>
+        <docker.repo.project>experimental</docker.repo.project>
+        <docker.image.name>${docker.repo.url}/${docker.repo.project}/${project.artifactId}
+        </docker.image.name>
+
+        <!-- when enabled removes "SNAPSHOT" from default tag (project version) -->
+        <docker.tag.trim>false</docker.tag.trim>
+
+        <!-- base image -->
+        <docker.distroless.image>gcr.io/distroless/java:11</docker.distroless.image>
+
+        <!-- execution control -->
+        <docker.jib.goal>build</docker.jib.goal>
+
+        <!-- image dependencies -->
+        <docker.runtime.tomcat>compile</docker.runtime.tomcat>
+        <!-- db drivers -->
+        <docker.jdbc.mysql>compile</docker.jdbc.mysql>
+        <docker.jdbc.mssql>compile</docker.jdbc.mssql>
+        <docker.jdbc.oracle>compile</docker.jdbc.oracle>
+
+        <!-- binders -->
+        <docker.scs.rabbit>compile</docker.scs.rabbit>
+        <docker.scs.kafka>compile</docker.scs.kafka>
+
+        <!-- jib preset properties -->
+        <jib.container.creationTime>USE_CURRENT_TIMESTAMP</jib.container.creationTime>
+        <jib.container.ports>8080</jib.container.ports>
+
+        <!-- Plugin versions -->
+        <jib-maven-plugin.version>2.5.2</jib-maven-plugin.version>
+        <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
+        <maven.release.plugin>3.0.0-M1</maven.release.plugin>
+        <maven.site.plugin>3.8.2</maven.site.plugin>
+        <jacoco.version>0.8.5</jacoco.version>
+        <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
+        <spring-boot-maven-plugin.version>2.3.12.RELEASE</spring-boot-maven-plugin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <!-- The maven-compiler-plugin gives much better error messages with Javac instead of OpenJDK 11 javax.tools -->
+        <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
+        <gmavenplus-plugin.version>1.8.1</gmavenplus-plugin.version>
+        <project.version>0.0.1-SNAPSHOT</project.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.value.buildingblocks</groupId>
+                <artifactId>building-blocks-dependencies</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>core-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>cloud-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>resilience</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>service-sdk-common-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>service-sdk-starter-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>service-sdk-starter-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.value.buildingblocks</groupId>
+            <artifactId>service-sdk-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-kubernetes</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-kubernetes-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <!-- spring-boot-starter-tomcat is declared as <scope>provided</scope> so that the spring-boot-maven-plugin will produce a fat war which is both executable and deployable.  -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <configuration>
+                        <attachClasses>true</attachClasses>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.google.cloud.tools</groupId>
+                    <artifactId>jib-maven-plugin</artifactId>
+                    <version>${jib-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.gmavenplus</groupId>
+                    <artifactId>gmavenplus-plugin</artifactId>
+                    <version>${gmavenplus-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>get-latest-version</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-all</artifactId>
+                        <version>${groovy.version}</version>
+                        <type>pom</type>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <scripts>
+                        <script>
+                            project.properties.setProperty('previous.release.version',
+                            '0.0.1-SNAPSHOT')
+                        </script>
+                    </scripts>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <!-- ## jib docker images profiles  ##-->
+
+        <profile>
+            <id>docker-image</id>
+
+            <properties>
+                <skip.integration.tests>true</skip.integration.tests>
+                <skip.unit.tests>true</skip.unit.tests>
+            </properties>
+
+            <dependencies>
+                <!-- add db drivers -->
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <scope>${docker.jdbc.mysql}</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.microsoft.sqlserver</groupId>
+                    <artifactId>mssql-jdbc</artifactId>
+                    <scope>${docker.jdbc.mssql}</scope>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.oracle.ojdbc</groupId>
+                    <artifactId>ojdbc8</artifactId>
+                    <scope>${docker.jdbc.oracle}</scope>
+                </dependency>
+
+                <!-- add embedded tomcat -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>${docker.runtime.tomcat}</scope>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <!-- Determine the main class -->
+                    <plugin>
+                        <groupId>com.value.buildingblocks</groupId>
+                        <artifactId>service-sdk-build-utils-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>find-main-class-for-jib</id>
+                                <goals>
+                                    <goal>find-main-class</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Use git commit time as creation date for the image -->
+                    <plugin>
+                        <groupId>pl.project13.maven</groupId>
+                        <artifactId>git-commit-id-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <generateGitPropertiesFile>false</generateGitPropertiesFile>
+                            <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                            <includeOnlyProperties>
+                                <includeOnlyProperty>^git.commit.time$</includeOnlyProperty>
+                            </includeOnlyProperties>
+                        </configuration>
+                    </plugin>
+
+                    <!-- generate "docker.default.tag" which typically is project.version -->
+                    <plugin>
+                        <groupId>org.codehaus.gmavenplus</groupId>
+                        <artifactId>gmavenplus-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>set-properties</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>execute</goal>
+                                </goals>
+                                <configuration>
+                                    <scripts>
+                                        <script>
+                                            <![CDATA[
+                                                tag = "${project.version}"
+                                                if ("${docker.tag.trim}".equals("true")) {
+                                                    tag = tag.minus("-SNAPSHOT")
+                                                }
+                                                project.properties.setProperty('docker.default.tag', tag)
+                                                println "docker.default.tag: " + project.properties['docker.default.tag']
+
+                                                //check project type
+                                                if ("${project.packaging}".equals("jar")) {
+                                                    project.properties.setProperty('findMainClass.skip', 'true')
+                                                    project.properties.setProperty('docker.distroless.war.tag.skip', 'true')
+                                                    project.properties.setProperty('docker.distroless.war.latest.skip', 'true')
+                                                    println 'jar image setup'
+                                                } else {
+                                                    project.properties.setProperty('docker.distroless.jar.tag.skip', 'true')
+                                                    project.properties.setProperty('docker.distroless.jar.latest.skip', 'true')
+                                                    println 'war image setup'
+                                                }
+
+                                                //Set image creation time
+                                                try {
+                                                gitTime = "${git.commit.time}"
+                                                if (gitTime?.trim()) {
+                                                    project.properties.setProperty('jib.container.creationTime', gitTime)
+                                                }
+                                                println "jib.container.creationTime: " + project.properties['jib.container.creationTime']
+                                                }catch(Exception ex) {
+                                                   println "WARN: Not a git repo";
+                                                }
+                                            ]]>
+                                        </script>
+                                    </scripts>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- building images -->
+                    <plugin>
+                        <groupId>com.google.cloud.tools</groupId>
+                        <artifactId>jib-maven-plugin</artifactId>
+                        <version>${jib-maven-plugin.version}</version>
+                        <executions>
+
+                            <!-- for project packaging: war -->
+                            <execution>
+                                <id>distroless-image-war-tag</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>${docker.jib.goal}</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>${docker.distroless.war.tag.skip}</skip>
+                                    <from>
+                                        <image>${docker.distroless.image}</image>
+                                    </from>
+                                    <to>
+                                        <image>${docker.image.name}:${docker.default.tag}</image>
+                                    </to>
+                                    <container>
+                                        <appRoot>/app</appRoot>
+                                        <entrypoint>
+                                            java,-cp,/app/extras/*:/app/WEB-INF/classes:/app/WEB-INF/lib/*,${main-class}
+                                        </entrypoint>
+                                        <user>nonroot:nonroot</user>
+                                        <workingDirectory>/home/nonroot</workingDirectory>
+                                    </container>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>distroless-image-war-latest</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>${docker.jib.goal}</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>${docker.distroless.war.latest.skip}</skip>
+                                    <from>
+                                        <image>${docker.distroless.image}</image>
+                                    </from>
+                                    <to>
+                                        <image>${docker.image.name}:latest</image>
+                                    </to>
+                                    <container>
+                                        <appRoot>/app</appRoot>
+                                        <entrypoint>
+                                            java,-cp,/app/extras/*:/app/WEB-INF/classes:/app/WEB-INF/lib/*,${main-class}
+                                        </entrypoint>
+                                        <user>nonroot:nonroot</user>
+                                        <workingDirectory>/home/nonroot</workingDirectory>
+                                    </container>
+                                </configuration>
+                            </execution>
+
+                            <!-- for project packaging: jar -->
+                            <execution>
+                                <id>distroless-image-jar-tag</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>${docker.jib.goal}</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>${docker.distroless.jar.tag.skip}</skip>
+                                    <from>
+                                        <image>${docker.distroless.image}</image>
+                                    </from>
+                                    <to>
+                                        <image>${docker.image.name}:${docker.default.tag}</image>
+                                    </to>
+                                    <container>
+                                        <user>nonroot:nonroot</user>
+                                        <workingDirectory>/home/nonroot</workingDirectory>
+                                        <extraClasspath>/app/extras/*</extraClasspath>
+                                    </container>
+                                </configuration>
+                            </execution>
+
+                            <execution>
+                                <id>distroless-image-jar-latest</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>${docker.jib.goal}</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>${docker.distroless.jar.latest.skip}</skip>
+                                    <from>
+                                        <image>${docker.distroless.image}</image>
+                                    </from>
+                                    <to>
+                                        <image>${docker.image.name}:latest</image>
+                                    </to>
+                                    <container>
+                                        <user>nonroot:nonroot</user>
+                                        <workingDirectory>/home/nonroot</workingDirectory>
+                                        <extraClasspath>/app/extras/*</extraClasspath>
+                                    </container>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- additional profiles to be used in combination with the main "docker-image" profile -->
+
+        <!-- build to local daemon -->
+        <profile>
+            <id>local-client</id>
+            <properties>
+                <docker.jib.goal>dockerBuild</docker.jib.goal>
+                <docker.repo.url/>
+                <docker.repo.project/>
+                <docker.image.name>${project.artifactId}</docker.image.name>
+            </properties>
+        </profile>
+
+        <!-- disable pushing "latest" tag -->
+        <profile>
+            <id>no-latest-tag</id>
+            <properties>
+                <docker.distroless.jar.latest.skip>true</docker.distroless.jar.latest.skip>
+                <docker.distroless.war.latest.skip>true</docker.distroless.war.latest.skip>
+            </properties>
+        </profile>
+
+        <!-- exclude db drivers -->
+        <profile>
+            <id>no-jdbc</id>
+            <properties>
+                <docker.jdbc.mysql>provided</docker.jdbc.mysql>
+                <docker.jdbc.mssql>provided</docker.jdbc.mssql>
+                <docker.jdbc.oracle>provided</docker.jdbc.oracle>
+            </properties>
+        </profile>
+
+        <!-- exclude cloud stream binders -->
+        <profile>
+            <id>no-scs</id>
+            <properties>
+                <docker.scs.rabbit>provided</docker.scs.rabbit>
+                <docker.scs.kafka>provided</docker.scs.kafka>
+            </properties>
+        </profile>
+
+        <!-- exclude embedded tomcat -->
+        <profile>
+            <id>no-runtime</id>
+            <properties>
+                <docker.runtime.tomcat>provided</docker.runtime.tomcat>
+            </properties>
+        </profile>
+
+        <!-- removes "-SNAPSHOT" when generating a default image tag -->
+        <profile>
+            <id>trim-snapshot</id>
+            <properties>
+                <docker.tag.trim>true</docker.tag.trim>
+            </properties>
+        </profile>
+
+        <!-- disable generating images  -->
+        <profile>
+            <id>distroless-skip</id>
+            <activation>
+                <property>
+                    <name>docker.distroless.skip</name>
+                </property>
+            </activation>
+
+            <properties>
+                <docker.distroless.war.tag.skip>true</docker.distroless.war.tag.skip>
+                <docker.distroless.war.latest.skip>true</docker.distroless.war.latest.skip>
+                <docker.distroless.jar.tag.skip>true</docker.distroless.jar.tag.skip>
+                <docker.distroless.jar.latest.skip>true</docker.distroless.jar.latest.skip>
+            </properties>
+        </profile>
+
+        <!-- ####-->
+
+    </profiles>
+
+</project>

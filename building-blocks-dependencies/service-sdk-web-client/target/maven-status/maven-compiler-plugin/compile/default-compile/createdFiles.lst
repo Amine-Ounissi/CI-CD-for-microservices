@@ -1,0 +1,6 @@
+com/value/buildingblocks/webclient/InterServiceWebClientConfiguration.class
+com/value/buildingblocks/webclient/InterServiceWebClientCustomizer.class
+com/value/buildingblocks/webclient/CsrfClientExchangeFilterFunction.class
+META-INF/spring-autoconfigure-metadata.properties
+com/value/buildingblocks/webclient/WebClientConstants.class
+com/value/buildingblocks/webclient/ContextPathAwareReactorLoadBalancerExchangeFilterFunction.class

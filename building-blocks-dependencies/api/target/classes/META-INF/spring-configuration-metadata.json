@@ -1,0 +1,132 @@
+{
+  "groups": [
+    {
+      "name": "value.api",
+      "type": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties"
+    },
+    {
+      "name": "value.api.errors",
+      "type": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "sourceMethod": "getErrors()"
+    },
+    {
+      "name": "value.api.mvc",
+      "type": "com.value.buildingblocks.backend.api.config.ApiProperties$Mvc",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "sourceMethod": "getMvc()"
+    },
+    {
+      "name": "value.api.mvc.csv",
+      "type": "com.value.buildingblocks.backend.api.config.ApiProperties$Mvc$Csv",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Mvc",
+      "sourceMethod": "getCsv()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.api.disable-secure-exceptions",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.api.errors.handle-api-exceptions",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-binding-result-errors-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-constraint-violation-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-conversion-failed-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-http-media-type-not-acceptable-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-http-message-conversion-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-method-argument-not-valid-exception",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.handle-non-api-exceptions",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.errors.message400",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Errors"
+    },
+    {
+      "name": "value.api.mvc.csv.autoconfig",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Mvc$Csv",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.mvc.csv.csv-class-properties",
+      "type": "java.util.Map<java.lang.Class<?>,com.value.buildingblocks.backend.api.csv.CsvClassProperties>",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties$Mvc$Csv"
+    },
+    {
+      "name": "value.api.name",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "defaultValue": "api"
+    },
+    {
+      "name": "value.api.override5xx-error-messages",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.api.use-path-extensions-for-content-negotiation",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "defaultValue": false,
+      "deprecated": true,
+      "deprecation": {
+        "reason": "In Spring Framework 5.3 the use of suffixes for content negotiation will be removed."
+      }
+    },
+    {
+      "name": "value.api.use-suffix-pattern-match",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.api.config.ApiProperties",
+      "defaultValue": false,
+      "deprecated": true,
+      "deprecation": {
+        "reason": "In Spring Framework 5.3 the use of suffixes for content negotiation will be removed."
+      }
+    }
+  ],
+  "hints": []
+}

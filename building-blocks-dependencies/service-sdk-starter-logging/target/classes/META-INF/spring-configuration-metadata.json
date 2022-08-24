@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "value.http.request-logging-filter",
+      "type": "org.springframework.web.filter.CommonsRequestLoggingFilter",
+      "sourceType": "com.value.buildingblocks.logging.RequestLoggingAutoConfiguration",
+      "sourceMethod": "commonsRequestLoggingFilter()"
+    },
+    {
+      "name": "value.logging",
+      "type": "com.value.buildingblocks.logging.LoggingProperties",
+      "sourceType": "com.value.buildingblocks.logging.LoggingProperties"
+    },
+    {
+      "name": "value.logging.crlf-protection",
+      "type": "com.value.buildingblocks.logging.LoggingProperties$CrlfProtectionProperties",
+      "sourceType": "com.value.buildingblocks.logging.LoggingProperties",
+      "sourceMethod": "getCrlfProtection()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.http.request-logging-filter.environment",
+      "type": "org.springframework.core.env.Environment",
+      "sourceType": "org.springframework.web.filter.CommonsRequestLoggingFilter"
+    },
+    {
+      "name": "value.logging.crlf-protection.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.logging.LoggingProperties$CrlfProtectionProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.logging.crlf-protection.replacement",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.logging.LoggingProperties$CrlfProtectionProperties",
+      "defaultValue": "\n+[ "
+    },
+    {
+      "name": "value.logging.crlf-protection.target",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.logging.LoggingProperties$CrlfProtectionProperties",
+      "defaultValue": "\n"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: edge
+
+  # Using Spring Cloud Config Server
+  cloud:
+    config:
+      enabled: false
+      fail-fast: true
+      uri: http://localhost:8888
+      retry:
+        max-attempts: 4 # Multiplier for next interval.
+        max-interval: 2000 # Maximum interval for backoff.

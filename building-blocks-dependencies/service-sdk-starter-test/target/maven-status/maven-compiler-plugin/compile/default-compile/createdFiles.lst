@@ -1,0 +1,7 @@
+com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration$QueryParameterPlusToPercentEncodingCoercer$1.class
+com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration.class
+com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration$MockTestRestTemplateCustomizer.class
+com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration$TestServiceTokenProvider.class
+com/value/buildingblocks/backend/communication/http/TestOAuthTokenCustomizerConfiguration.class
+com/value/buildingblocks/backend/communication/http/ServiceTokenInterServiceCustomizer.class
+com/value/buildingblocks/backend/communication/http/TestRestTemplateConfiguration$QueryParameterPlusToPercentEncodingCoercer.class

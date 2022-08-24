@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: token-converter
+  namespace: intern-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: token-converter
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: token-converter
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+      - name: token-converter
+        image: 10.1.0.4:5000/repository/value/infra-amine-intern/token-converter:latest.0.0.2-10
+        env:
+        - name: REGISTRY_HOST
+          value: "registry"  
+        - name: REGISTRY_PORT
+          value: "8080"
+        - name: SERVER_PORT
+          value: "8080"
+        ports:
+        - containerPort: 8080
+         
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: token-converter-loadbalancer
+  namespace: intern-deploy
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: token-converter
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: token-converter
+  namespace: intern-deploy
+spec:
+  selector:
+    app: token-converter
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

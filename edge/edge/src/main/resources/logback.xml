@@ -1,0 +1,12 @@
+<configuration>
+    <contextName>gateway</contextName>
+
+    <property name="logging.level" value="WARN" />
+    <property name="logging.level.com.value.platform.edge" value="WARN" />
+
+    <logger name="com.value.platform.edge" level="${logging.level.com.value.platform.edge:-WARN}"/>
+    <logger name="com.netflix.zuul" level="${logging.level.com.value.platform.edge:-WARN}"/>
+    <logger name="org.springframework" level="${logging.level.org.springframework:-WARN}"/>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+</configuration>

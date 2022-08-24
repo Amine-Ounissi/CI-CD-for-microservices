@@ -1,0 +1,56 @@
+{
+  "groups": [
+    {
+      "name": "value.security.mtls",
+      "type": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties"
+    },
+    {
+      "name": "value.security.service",
+      "type": "com.value.buildingblocks.backend.security.auth.config.ServiceApiConfigurationProperties",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.ServiceApiConfigurationProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "value.security.mtls.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.mtls.paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties"
+    },
+    {
+      "name": "value.security.mtls.subject-principal-regex",
+      "type": "java.lang.String",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties",
+      "defaultValue": "CN=(.*?)(?:,|$)"
+    },
+    {
+      "name": "value.security.mtls.trusted-clients",
+      "type": "java.util.List<com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties$TrustedClient>",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties"
+    },
+    {
+      "name": "value.security.mtls.validate-client",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.MutualTlsConfigurationProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "value.security.service.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.ServiceApiConfigurationProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "value.security.service.paths",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.value.buildingblocks.backend.security.auth.config.ServiceApiConfigurationProperties"
+    }
+  ],
+  "hints": []
+}

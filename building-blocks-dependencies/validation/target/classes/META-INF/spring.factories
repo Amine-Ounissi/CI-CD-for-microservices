@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.value.buildingblocks.idempotency.DoubleSubmissionFilterConfig,\
+com.value.buildingblocks.backend.validation.ValidationAutoConfiguration,\
+com.value.buildingblocks.xss.XssFilterAutoConfiguration
